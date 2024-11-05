@@ -1,22 +1,36 @@
-@font-face {
+@font-face {                            /* custom font */
     font-family: 'CustomFont_Caveat';
     src: url('Caveat/Caveat-VariableFont_wght.ttf'); 
                 /* ! forward slash */
 }
 
-body{
-    /* font-size: 3vmin; */
-    /* margin: 3vmax; */
 
-    height: 100%;
-    width: 100%;
+/*ToDo  Spent an extra lot of time organising .PiecesBoard (+children) components to get the desired visual adaptive behaviour                 */
+/*ToDo  I wanted the '.Large' '.Medium' '.Small' boxes when selected to always only be as large/wide as the items inside (so the border when outlined is accurate)   */
+/*ToDo       whilst using those objects to reference and shrink, shrinking children to better represent the size of the pieces they correlate to        */
+/*ToDo  Organizing the hierarchy like this, I thought referencing (e.g., .Large) would be a simple way to control the size of the elements              */
+/*ToDo  Turns out I couldnt scale it whilst asking it to match the childrens width, had to scale the children instead (in this case the <p>)            */
+
+/*ToDo  Added vertical view scaling            */
+/*ToDo  Won't do checking who wins, as I don’t think that’s difficult/worth-time. I will move on to another project          */
+
+
+/*?   consider reading in browser Inspect   */
+
+
+
+/*! ------ Main Structure MockUp ------ */
+
+body{  
+    /* height: 100%; */
+    /* width: 60vmin; */
 
 
     background-color: beige;
 
     /* display: flex; */
-    flex-direction: column;
-    justify-content: center;
+    /* flex-direction: column; */
+    /* justify-content: center; */
 
     font-family: CustomFont_Caveat;
 
@@ -45,58 +59,33 @@ body .MainBodyLayout{
     /* height: 100vmin; */
 }
 
-/* .PiecesBoard{
-    display: grid;
-    grid-template: auto auto auto / auto ;
-    margin-top: 10%;
-
-}
-.PiecesBoard > div{
-    display: flex;
-    width: fit-content;
-    flex-direction: row-reverse;
-    justify-self: end;
-    height: fit-content;
-} */
-#tealSide > div{
+#tealSide > div{    /* invert 2nd players layout*/
     flex-direction: row;
     justify-self: start;
 }
 
 p{
     margin: 0em;
-    /* margin: .2em; */
-    /* padding: 2em; */
     padding: 0em;
     border: 0em;
-    /* background-color:blanchedalmond; */
 }
+
 
 .Table{
     /* margin: 1em; */
     display: grid;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr ;
-    /* width: 100%;
-    height: 100%; */
     background-color: rgb(226, 226, 203);
     gap: 5px;
-
-    /* ???? */
-    /* margin-left: 3vmin;
-    margin-right: 3vmin; */
-
 }
 .Table p{
-    /* height: auto;
-    width: auto; */
     padding: 2vmin;
     background-color: beige;
-
 }
-/* .PiecesBoard p{
-    font-size: 80%;
-} */
 
+
+
+/* small turn text */
 .SideSide_Turn{
     display: flex;
     justify-content: center;
@@ -106,7 +95,7 @@ p{
     margin: .3%;
 }
 
-/* little gradient */
+/** little gradient for starting text */
 #TurnTag2{
     background: linear-gradient(to right, orange, teal); /* Orange to teal gradient */
     -webkit-background-clip: text;  /* Safari/Chrome */
@@ -119,8 +108,10 @@ p{
 
 
 
-/*! -- interacting -- */
 
+/*! ------ interacting ------ */
+
+/** Hovering */
 .Table p {
     cursor: pointer;
     border: 1px solid #33333300;
@@ -151,11 +142,12 @@ p{
 
 
 
-
+/** Make non clickable for Consistency */
 .PiecesBoard img, .PiecesBoard p, .Table img  {
     /* (unclickable) */
     pointer-events: none;
 }
+
 
 
 /* ! ---- Cups ---- */
@@ -175,10 +167,10 @@ img{
     /* display: flex; */
     /*? align-self: center; */
     /* justify-self: center; */
-
 }
 
-/*!  PiecesBoard  */
+
+/*!   PiecesBoard   */
 .PiecesBoard{
 
     margin-top: 4vmin;
@@ -186,14 +178,14 @@ img{
     display: flex;
     /* grid-template-rows: auto auto auto; */
     flex-direction: column;
-    width: 20vmin;
+    width: 30vmin;
     align-items: end;
     justify-items: end;
     /* height: auto; */
     /* width: fit-content; */
 }
 #tealSide{
-    align-items: start;
+    align-items: start;     /* Invert */
 }
 
 .Large, .Medium, .Small{
@@ -214,27 +206,19 @@ img{
 
 }
 
+/**  Scale Cups  */
 .Large p{
-    height: 7vmin;
+    height: 10vmin;
 }
 .Medium p{
-    height: 5vmin;
+    height: 6vmin;
 }
 .Small p{
     height: 3vmin;
 }
 
-/* .Large p{
-    height: 6vmin;
-}
-.Medium p{
-    height: 4vmin;
-}
-.Small p{
-    height: 2vmin;
-} */
 
-/* ? (    CupLarge    ) */
+/* ? ( eg   CupLarge    ) */
 .PiecesBoard > div > p{
     padding: 0%;
     margin: 0;
@@ -254,7 +238,7 @@ img{
     display: inline;
     /* flex-grow: 1; */
     /* object-fit: contain;     */
-    /* ! keeps aspect ratio */
+    /* ? keeps aspect ratio */
 
     height: 100%;
     width: 100%;
@@ -265,25 +249,6 @@ img{
     border: 0;
 }
 
-
-/* .PiecesBoard .Large {
-    height: 40%;
-
-    margin-left: 4%;
-    margin-right: 4%;
-}
-.PiecesBoard .Medium {
-    height: 65%;
-
-    margin-left: 4%;
-    margin-right: 4%;
-}
-.PiecesBoard .Small {
-    height: 40%;
-
-    margin-left: 6%;
-    margin-right: 6%;
-} */
 
 
 /*!  Main Table Board  */
@@ -303,23 +268,56 @@ img{
 
     display: flex;
     justify-content: center;
-
 }
 
+
+
+/** Fix Vertical Screen scaling */
+@media (max-aspect-ratio: 1/.84){
+    .Table p{
+        width: 9.5vmin;
+        height: 9.5vmin;
+    }
+}
+@media (max-aspect-ratio: 1/1.4){   /** Might as well do Super Vertical */
+    .MainBodyLayout{
+        /* background-color: brown; */
+        flex-wrap: wrap;
+        justify-content: center;
+
+        margin-top: 6vmin;
+        
+    }
+    .Table{
+        order: -1;
+        margin-bottom: 6vmin;
+    }
+    .Table p{
+        width: 16vmin;
+        height: 16vmin;
+    }
+}
+
+
+
+/**  Scale Tables Cups  */
 .Table > .CupLarge img{
-    width: 65%;
+    width: 80%;
+
+    /** Small height adjustment for emersion */
+    position: relative;
+    top: -16%;
 }
 .Table > .CupMedium img{
-    width: 50%;
+    width: 55%;
+
+    position: relative;
+    top: -7%;
 }
 .Table > .CupSmall img{
     width: 30%;
 }
 
-/* .Table{
-    width: 60vmin;
-    height: 60vmin;
-} */
 
 
 

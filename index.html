@@ -11,10 +11,19 @@
 
 </head>
 <body>
+    <!--!   This website is a tictactoe game - but with each player having 3 different size cups (3 each)   -->
+    <!--!       Like russian dolls the larger cups can overide smaller pieces                               -->
+    <!--!       players pieces are represented (.PiecesBoards) and are selectable                           -->
+
+
+
     <h1> TicTacToe Cups </h1>
 
+    <!--* Interactive Items _ grid  -->
     <div class="MainBodyLayout">
 
+
+        <!--* Orange Player's avalible pieces -->
         <div class="PiecesBoard" id="orangeSide">
             <div class="Large">
                 <p class="CupLarge"> <img class="OrangeCup" src="Cups/cupO.png" alt="OrangeCup"> </p>
@@ -33,22 +42,22 @@
             </div>
         </div>
 
+
+        <!--* Grid table to represent the actual game  -->
         <div class="Table">
-
-            <p> 8 </p> 
-            <p> 8 </p> 
-            <p> 8 </p> 
-            <p> 8 </p> 
-            <p> 8 </p> 
-            <p> 8 </p> 
-            <p> 8 </p> 
-            <p> 8 </p> 
-            <p> 8 </p> 
-
-
-
+            <p> Grid items (1) </p> 
+            <p> 2 </p> 
+            <p> 3 </p> 
+            <p> etc </p> 
+            <p> - </p> 
+            <p> - </p> 
+            <p> - </p> 
+            <p> - </p> 
+            <p> - </p> 
         </div>
 
+
+        <!--* Teal Player's avalible pieces -->
         <div class="PiecesBoard" id="tealSide">
             <div class="Large">
                 <p class="CupLarge"> <img class="TealCup" src="Cups/cupT.png" alt="TealCup"> </p>
@@ -66,15 +75,19 @@
                 <p class="CupSmall"> <img class="TealCup" src="Cups/cupT.png" alt="TealCup"> </p>
             </div>
         </div>
-
     </div>
 
+
+    <!--*  Small text to help track whos turn / and encorage how to start the game  -->
     <div class="SideSide_Turn">
         <!-- <h4> Turn: </h4> -->
         <h4 id="TurnTag">  </h4>
         <h4 id="TurnTag2"> Select Piece </h4>
     </div>
 
+
+
+    <!--*  Prefab items that represent players items - to copy into the main table when needed  (hidden)-->
     <div class="Invis">
         <p id="Blank" class="Blank">  </p>
         <p id="OrangeLarge" class="CupLarge"> <img class="OrangeCup" src="Cups/cupO.png" alt="OrangeCupL"> </p>
