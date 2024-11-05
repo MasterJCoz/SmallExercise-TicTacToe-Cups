@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'CustomFont_Caveat';
+    src: url('Caveat/Caveat-VariableFont_wght.ttf'); 
+                /* ! forward slash */
+}
+
+body{
+    font-size: 3vmin;
+    margin: 5vmin;
+
+
+    background-color: beige;
+
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+
+    font-family: CustomFont_Caveat;
+
+    display: inline;
+    text-align: center;
+}
+
+.MainBodyLayout{
+    margin: 4%;
+    display: grid;
+    gap: 2%;
+    grid-template: 1fr / auto auto auto;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.PiecesBoard{
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr ;
+    height: 20%;
+}
+.PiecesBoard > div{
+    display: flex;
+    width: fit-content;
+    flex-direction: row-reverse;
+    justify-self: end;
+
+}
+#tealSide > div{
+    flex-direction: row;
+    justify-self: start;
+}
+
+p{
+    margin: .2em;
+    padding: 2em;
+    border: 0em;
+    background-color:blanchedalmond;
+}
+
+.Table{
+    /* margin: 1em; */
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr ;
+    width: fit-content;
+}
+.Table p{
+    height: auto;
+    width: auto;
+}
+.PiecesBoard p{
+    font-size: 80%;
+}
+
+.SideSide_Turn{
+    display: flex;
+    justify-content: center;
+}
+.SideSide_Turn h4{
+    margin: .3%;
+}
+
+/* little gradient */
+#TurnTag2{
+    background: linear-gradient(to right, orange, teal); /* Orange to teal gradient */
+    -webkit-background-clip: text;  /* Safari/Chrome */
+    background-clip: text;
+    color: transparent;             /* Hides the actual text color to show the gradient */
+    width: 13%;
+}
+
+
+
+
+
+/*! -- interacting -- */
+
+.Table p {
+    cursor: pointer;
+    border: 1px solid #33333300;
+    transition: border-color 0.1s;
+}
+.Table p:hover {
+    border-color:  #ddd;
+}
+.Table p:active {
+    border-color: #bbb;
+}
+
+
+.PiecesBoard > div {
+    cursor: pointer;
+    border: 1px solid #33333300;
+    transition: border-color 0.1s;
+}
+.PiecesBoard > div:hover {
+    border-color:  #ddd;
+}
+.PiecesBoard > div:active {
+    border-color: #bbb;
+}

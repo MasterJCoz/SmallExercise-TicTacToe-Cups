@@ -1,0 +1,370 @@
+@font-face {
+    font-family: 'CustomFont_Caveat';
+    src: url('Caveat/Caveat-VariableFont_wght.ttf'); 
+                /* ! forward slash */
+}
+
+body{
+    /* font-size: 3vmin; */
+    /* margin: 3vmax; */
+
+    height: 100%;
+    width: 100%;
+
+
+    background-color: beige;
+
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+
+    font-family: CustomFont_Caveat;
+
+    display: inline;
+    text-align: center;
+}
+body .MainBodyLayout{
+    justify-self: center;
+}
+
+.MainBodyLayout{
+    margin: 4vmin;
+    display: flex;
+    gap: 4%;
+    /* grid-template: 60vmin / 30vmin 40vmin 30vmin; */
+    align-items: flex-start;
+    justify-items: center;
+
+    /* height: 100%; */
+    /* width: 100%; */
+
+    /* justify-content: center; */
+    /* justify-items: stretch; */
+
+    /* width: 100vmin; */
+    /* height: 100vmin; */
+}
+
+/* .PiecesBoard{
+    display: grid;
+    grid-template: auto auto auto / auto ;
+    margin-top: 10%;
+
+}
+.PiecesBoard > div{
+    display: flex;
+    width: fit-content;
+    flex-direction: row-reverse;
+    justify-self: end;
+    height: fit-content;
+} */
+#tealSide > div{
+    flex-direction: row;
+    justify-self: start;
+}
+
+p{
+    margin: 0em;
+    /* margin: .2em; */
+    /* padding: 2em; */
+    padding: 0em;
+    border: 0em;
+    /* background-color:blanchedalmond; */
+}
+
+.Table{
+    /* margin: 1em; */
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr ;
+    /* width: 100%;
+    height: 100%; */
+    background-color: rgb(226, 226, 203);
+    gap: 5px;
+
+    /* ???? */
+    /* margin-left: 3vmin;
+    margin-right: 3vmin; */
+
+}
+.Table p{
+    /* height: auto;
+    width: auto; */
+    padding: 2vmin;
+    background-color: beige;
+
+}
+/* .PiecesBoard p{
+    font-size: 80%;
+} */
+
+.SideSide_Turn{
+    display: flex;
+    justify-content: center;
+    font-size: 3vmin;
+}
+.SideSide_Turn h4{
+    margin: .3%;
+}
+
+/* little gradient */
+#TurnTag2{
+    background: linear-gradient(to right, orange, teal); /* Orange to teal gradient */
+    -webkit-background-clip: text;  /* Safari/Chrome */
+    background-clip: text;
+    color: transparent;             /* Hides the actual text color to show the gradient */
+    width: 13%;
+}
+
+
+
+
+
+/*! -- interacting -- */
+
+.Table p {
+    cursor: pointer;
+    border: 1px solid #33333300;
+    transition: border-color 0.1s;
+}
+.Table p:hover {
+    border-color:  #ddd;
+}
+.Table p:active {
+    border-color: #bbb;
+}
+
+
+.PiecesBoard > div {
+    cursor: pointer;
+    border: 2px solid #33333300;
+    transition: border-color 0.1s;
+    /* display: flex;
+    align-items: center;
+    align-self: center; */
+}
+.PiecesBoard > div:hover {
+    border-color:  #ddd;
+}
+.PiecesBoard > div:active {
+    border-color: #bbb;
+}
+
+
+
+
+.PiecesBoard img, .PiecesBoard p, .Table img  {
+    /* (unclickable) */
+    pointer-events: none;
+}
+
+
+/* ! ---- Cups ---- */
+img{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: inline-block;
+    align-self: center;
+    justify-self: center;
+    
+}
+.CupLarge, .CupMedium, .CupSmall {
+    margin: 0;
+    padding: 0;
+
+    /* display: flex; */
+    /*? align-self: center; */
+    /* justify-self: center; */
+
+}
+
+/*!  PiecesBoard  */
+.PiecesBoard{
+
+    margin-top: 4vmin;
+
+    display: flex;
+    /* grid-template-rows: auto auto auto; */
+    flex-direction: column;
+    width: 20vmin;
+    align-items: end;
+    justify-items: end;
+    /* height: auto; */
+    /* width: fit-content; */
+}
+#tealSide{
+    align-items: start;
+}
+
+.Large, .Medium, .Small{
+    margin-top: 4px;
+    display: inline-flex;
+    
+    flex-direction: row-reverse;
+    /* flex-shrink: var(1vmin); */
+    width: fit-content;
+    /* justify-items: center; */
+
+    /* height: fit-content; */
+    /* width: fit-content; */
+    
+    /* width: 80%; */
+    /* height: 5vmin; */
+    /* width: fit-content; */
+
+}
+
+.Large p{
+    height: 7vmin;
+}
+.Medium p{
+    height: 5vmin;
+}
+.Small p{
+    height: 3vmin;
+}
+
+/* .Large p{
+    height: 6vmin;
+}
+.Medium p{
+    height: 4vmin;
+}
+.Small p{
+    height: 2vmin;
+} */
+
+/* ? (    CupLarge    ) */
+.PiecesBoard > div > p{
+    padding: 0%;
+    margin: 0;
+    display: inline-flex;
+    /* width: 100%; */
+    /* height: 100%; */
+    /* height: 5%; */
+    /* width: auto; */
+    flex-shrink: 1;
+
+    margin: 0;
+    padding: 0.2vmin;
+    border: 0;
+}
+
+.PiecesBoard > div > p > img{
+    display: inline;
+    /* flex-grow: 1; */
+    /* object-fit: contain;     */
+    /* ! keeps aspect ratio */
+
+    height: 100%;
+    width: 100%;
+    /* font-size: 100%; */
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+/* .PiecesBoard .Large {
+    height: 40%;
+
+    margin-left: 4%;
+    margin-right: 4%;
+}
+.PiecesBoard .Medium {
+    height: 65%;
+
+    margin-left: 4%;
+    margin-right: 4%;
+}
+.PiecesBoard .Small {
+    height: 40%;
+
+    margin-left: 6%;
+    margin-right: 6%;
+} */
+
+
+/*!  Main Table Board  */
+.Table,
+.Table p,
+.Table p img{
+    /* width: 70%; */
+    /* height: auto; */
+    
+    margin: 0%;
+    border: 0%;
+    /* padding: 0%; */
+}
+.Table p{
+    width: 16vmin;
+    height: 16vmin;
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.Table > .CupLarge img{
+    width: 65%;
+}
+.Table > .CupMedium img{
+    width: 50%;
+}
+.Table > .CupSmall img{
+    width: 30%;
+}
+
+/* .Table{
+    width: 60vmin;
+    height: 60vmin;
+} */
+
+
+
+
+/*!  Other Bits  */
+.Invis{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .Large img{
+    padding: 1vmin;
+    width: 8vmin;
+}
+.Medium img{
+    padding: 1.2vmin;
+    width: 6vmin;
+}
+.Small img{
+    padding: 1.24vmin;
+    width: 4vmin;
+} */
+
+
+
+
+
+/* .CupMedium{
+    font-size: 100%;
+    height: 100%;
+    width: 100%;
+}
+.OrangeCup{
+    font-size: 100%;
+    height: 100%;
+    width: 100%;
+} */
+
+
